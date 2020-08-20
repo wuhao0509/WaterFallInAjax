@@ -11,6 +11,7 @@ function getData() {
 }
 
 var oLi = document.getElementsByClassName('col');
+
 function renderDom(result) {
     isFinsh = true;
     var imgWidth = oLi[0].offsetWidth - 20 - 20;
@@ -32,16 +33,19 @@ function renderDom(result) {
         oP.innerText = elem.desc;
         oDiv.appendChild(oP);
 
-        // 创建div.item
-        /*  str = `
-             <img src=${elem.img} alt="">
-             <span>${elem.desc}</span>
-         `
-         var oDiv = document.createElement('div');
-         oDiv.className = 'item';
-         oDiv.innerHTML = str; */
+        //模板字符串
+        // str = `
+        //      <img src=${elem.img} alt="">
+        //      <span>${elem.desc}</span>
+        //  `
+        // var oDiv = document.createElement('div');
+        // oDiv.className = 'item';
+        // oDiv.innerHTML = str;
+        // var oImg = oDiv.getElementsByTagName('img')[0];
+        // var imgHeight = elem.height * imgWidth / elem.width;
+        // oImg.height = imgHeight;
 
-        // 向页面插入
+        // 向页面插入(选择最短的列插入)
         // oLi[index%4].appendChild(oDiv);
         var minIndex = getMinCol().minIndex;
         oLi[minIndex].appendChild(oDiv);
@@ -50,7 +54,7 @@ function renderDom(result) {
 }
 
 // 找到最短的列
-function getMinCol() {
+ function getMinCol() {
     var minHeight = oLi[0].offsetHeight;
     var minIndex = 0;
     for (var i = 0; i < oLi.length; i++) {
