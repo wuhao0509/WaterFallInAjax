@@ -1,1 +1,1 @@
-# WaterFallInAjax
+# ajax获取图片，实现瀑布流功能

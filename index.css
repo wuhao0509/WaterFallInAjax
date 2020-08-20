@@ -1,0 +1,32 @@
+* {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.wrapper {
+    width: 1000px;
+    border: 1px solid #000;
+    margin: 10px auto;
+}
+
+.wrapper li {
+    width: 25%;
+    float: left;
+}
+
+.wrapper li div{
+    margin: 10px;
+    padding: 10px;
+
+}
+
+.wrapper li img {
+    width: 100%;
+}
